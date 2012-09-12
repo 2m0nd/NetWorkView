@@ -77,7 +77,7 @@ namespace NetworkView
 			{
                 Content = new AdapterSelector(_adapters),
                 Topmost = true,
-                Title = "Choise adapter",
+                Title = "Choice adapter",
 				WindowStyle = WindowStyle.ToolWindow,
 				ResizeMode = ResizeMode.NoResize,
                 SizeToContent = SizeToContent.WidthAndHeight
@@ -92,7 +92,7 @@ namespace NetworkView
             var window = new Window
             {
                 Topmost = true,
-                Title = "Choise colors",
+                Title = "Choose colors",
                 WindowStyle = WindowStyle.ToolWindow,
                 ResizeMode = ResizeMode.NoResize,
                 SizeToContent = SizeToContent.WidthAndHeight

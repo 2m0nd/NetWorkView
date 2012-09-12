@@ -1,5 +1,5 @@
-2012/09/12-11:14:32.908 2b0 Recovering log #88
-2012/09/12-11:14:32.931 2b0 Level-0 table #90: started
-2012/09/12-11:14:32.992 2b0 Level-0 table #90: 13866 bytes OK
-2012/09/12-11:14:33.075 2b0 Delete type=0 #88
-2012/09/12-11:14:33.075 2b0 Delete type=3 #86
+2012/09/12-11:39:20.784 1bb4 Recovering log #94
+2012/09/12-11:39:20.784 1bb4 Level-0 table #97: started
+2012/09/12-11:39:20.832 1bb4 Level-0 table #97: 149 bytes OK
+2012/09/12-11:39:20.965 1bb4 Delete type=0 #94
+2012/09/12-11:39:20.966 1bb4 Delete type=3 #92
