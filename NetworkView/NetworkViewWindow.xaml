@@ -1,0 +1,8 @@
+﻿<Window x:Class="NetworkView.NetworkViewWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:NetworkView="clr-namespace:NetworkView"
+        Title="NetworkViewWindow" Height="60" Width="90" Topmost="True" SizeToContent="WidthAndHeight" ShowInTaskbar="False" Background="Transparent" ResizeMode="NoResize" WindowStyle="None" AllowsTransparency="True" >
+
+    <NetworkView:NetworkViewControl Background="Transparent"/>
+  
+</Window>

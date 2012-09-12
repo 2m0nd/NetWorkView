@@ -1,0 +1,5 @@
+<Modules>
+  <Module PersistentId="B315F05A-43AA-4F7B-B571-4A5AA48E14A6" ModuleId="NetworkView" />
+  <Module PersistentId="23FD5387-A80F-47F1-80B1-5720C442EF73" ModuleId="StatNetworkClassLibrary" />
+  <Module PersistentId="E504C95B-3331-4FB2-B77D-4582F25CE41C" ModuleId="CustomAction1" />
+</Modules>

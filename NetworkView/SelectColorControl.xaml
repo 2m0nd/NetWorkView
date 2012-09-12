@@ -1,0 +1,19 @@
+﻿<UserControl x:Class="NetworkView.SelectColorControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="110" d:DesignWidth="250" Name="_thisColorSelector">
+    <StackPanel Background="Transparent">
+        <Slider Name="sliderRed" Background="Red" Value="{Binding ElementName=_thisColorSelector, Path=SelectedColor.Red}" Minimum="0"  Maximum="255"/>
+        <Slider Name="sliderGreen" Background="Green" Value="{Binding ElementName=_thisColorSelector, Path=SelectedColor.Green}" Minimum="0"  Maximum="255" />
+        <Slider Name="sliderBlue" Background="Blue" Value="{Binding ElementName=_thisColorSelector, Path=SelectedColor.Blue}" Minimum="0"  Maximum="255"/>
+        <Slider Name="sliderAlpha" Background="Transparent" Value="{Binding ElementName=_thisColorSelector, Path=SelectedColor.Alpha}" Minimum="0"  Maximum="255"/>
+        <StackPanel Orientation="Horizontal">
+            <RadioButton IsThreeState="False" Checked="selectBackround_Checked" Unchecked="selectBackround_Unchecked" Name="selectBackround" IsChecked="true" Margin="7" Content="Background"/>
+            <RadioButton IsThreeState="False" Checked="selectDownload_Checked" Unchecked="selectDownload_Unchecked" Name="selectDownload" Margin="7" Content="Download"/>
+            <RadioButton IsThreeState="False" Checked="selectUpload_Checked" Unchecked="selectUpload_Unchecked" Name="selectUpload" Margin="7" Content="Upload"/>
+        </StackPanel>
+    </StackPanel>
+</UserControl>

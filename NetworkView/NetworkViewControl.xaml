@@ -1,0 +1,32 @@
+﻿<UserControl x:Class="NetworkView.NetworkViewControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="60" d:DesignWidth="90" Width="89" Height="40">
+
+    <Grid Name="RootGrid" Background="Transparent">
+        <ContextMenuService.ContextMenu>
+            <ContextMenu Name="ctxMenu">
+                <MenuItem Header="About" Click="MenuItem_Click_About"/>
+                <MenuItem Header="Select adapter" Click="MenuItem_Click_SelectAdapter"/>
+                <MenuItem Header="Select colors" Click="MenuItem_Click_Config"/>
+                <MenuItem Header="Autostart" Name="checkAutostart" Click="MenuItem_Click_Autostart"  IsCheckable="True"/>
+                <MenuItem Header="Exit" Click="MenuItem_Click_Exit"/>
+            </ContextMenu>
+        </ContextMenuService.ContextMenu>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+        <!--<Label />-->
+        <TextBlock HorizontalAlignment="Left" Grid.Column="1" Grid.Row="0" Height="22" FontSize="16" Margin="5,0,0,0" Text="0000 kB/s" Foreground="SpringGreen" Name="dspeed"/>
+        <TextBlock HorizontalAlignment="Left" Grid.Column="1" Grid.Row="1" Height="22" FontSize="16" Margin="5,0,0,0" Text="00.00 MB/s" Foreground="OrangeRed" Name="upspeed"/>
+    </Grid>
+</UserControl>
