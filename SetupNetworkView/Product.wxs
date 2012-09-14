@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <?define ProductName="NetWorkVew" ?>
+  <?define ProductVersion="1.0.0.18" ?>
+  <?define ProductCode="17bc7c6f-9a4e-4973-be84-eca8e3427c12"?>
+  <?define UpgradeCode="16a81104-1e30-463d-87e1-e8a79b4c6812"?>
+  <?define Manufacturer="Dimond"?>
+  <?define PathBin="C:\Users\2m0nd\Documents\GitHub\NetWorkView\NetworkView\bin\Debug\"?>
+
+
+  <Product Id="$(var.ProductCode)" Name="$(var.ProductName)" Language="1049" Version="$(var.ProductVersion)" Manufacturer="$(var.Manufacturer)" UpgradeCode="$(var.UpgradeCode)">
+    <Package InstallerVersion="200" Compressed="yes" />
+
+    <Media Id="1" Cabinet="media1.cab" EmbedCab="yes" />
+
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="LocalPrograms">
+        <Directory Id="INSTALLLOCATION" Name="$(var.ProductName)">
+          <Component Id="ProductComponent" Guid="111556a2-e066-4393-af5c-9c9210187e12">
+            <File Id='exe' DiskId='1' Source='$(var.PathBin)NetworkView.exe'/>
+            <File Id='cfg' DiskId='1' Source='$(var.PathBin)NetworkView.exe.config'/>
+            <File Id='statdll' DiskId='1' Source='$(var.PathBin)StatNetworkClassLibrary.dll'/>
+            <!--<File Id='manifest' DiskId='1' Source='$(var.PathBin)NetworkView.exe.manifest'/>-->
+            <Shortcut Id="NetWorkViewLocal"
+                      Name="NetWorkView"
+                      Description="NetWorkView"
+                      Target="[INSTALLLOCATION]NetworkView.exe"
+                      WorkingDirectory="INSTALLLOCATION"/>
+          </Component>
+        </Directory>
+      </Directory>
+
+      <Directory Id="ProgramMenuFolder">
+        <Directory Id="ApplicationProgramsFolder">
+          <Component Id="Link" Guid="4291FC73-7AB3-4C35-9C9C-1CDDC2F99161">
+            <Shortcut Id="NetWorkViewApF"
+                Name="NetWorkView"
+                Description="NetWorkView"
+                Target="[INSTALLLOCATION]NetworkView.exe"
+                WorkingDirectory="INSTALLLOCATION"/>
+            <RegistryValue Root="HKCU" Key="Software\Microsoft\$(var.ProductName)" Name="installed" Type="integer" Value="1" KeyPath="yes"/>
+            <RemoveFolder Id="ApplicationProgramsFolder" On="uninstall"/>
+          </Component>
+        </Directory>
+      </Directory>
+
+      <Directory Id="DesktopFolder">
+        <Component Id="LinkDesktop" Guid="4291FC73-7AB3-4C35-9C9C-1CDDC2F99160">
+          <Shortcut Id="NetWorkViewDesktop"
+              Name="NetWorkView"
+              Description="NetWorkView"
+              Target="[INSTALLLOCATION]NetworkView.exe"
+              WorkingDirectory="INSTALLLOCATION"/>
+          <RegistryValue Root="HKCU" Key="Software\Microsoft\$(var.ProductName)" Name="installed" Type="integer" Value="1" KeyPath="yes"/>
+          <RemoveFolder Id="DesktopFolder" On="uninstall"/>
+        </Component>
+      </Directory>
+
+    </Directory>
+
+
+    <Feature Id="ProductFeature" Title="SetupProject1" Level="1">
+      <ComponentRef Id="ProductComponent" />
+      <ComponentRef Id="Link"/>
+      <ComponentRef Id="LinkDesktop"/>
+    </Feature>
+
+
+
+    <Property Id="LocalPrograms">C:\Users\2m0nd\AppData\Local\</Property>
+    <Property Id="WIXUI_INSTALLDIR" Value="INSTALLLOCATION" ></Property>
+    <UI>
+      <UIRef Id="WixUI_InstallDir" />
+      <!-- skip licence dialog -->
+      <Publish Dialog="WelcomeDlg" Control="Next" Event="NewDialog" Value="InstallDirDlg" Order="2">1</Publish>
+      <Publish Dialog="InstallDirDlg" Control="Back" Event="NewDialog" Value="WelcomeDlg" Order="2">1</Publish>
+      <Publish Dialog="ExitDialog"
+    Control="Finish"
+    Event="DoAction"
+    Value="LaunchApplication">WIXUI_EXITDIALOGOPTIONALCHECKBOX = 1 and NOT Installed</Publish>
+    </UI>
+    <Property Id="WIXUI_EXITDIALOGOPTIONALCHECKBOX">1</Property>
+    <Property Id="WIXUI_EXITDIALOGOPTIONALCHECKBOXTEXT" Value="Launch My Application Name" />
+    <!-- Step 3: Include the custom action -->
+    <Property Id="WixShellExecTarget" Value="[INSTALLLOCATION]NetworkView.exe" />
+    <CustomAction Id="LaunchApplication"
+        BinaryKey="WixCA"
+        DllEntry="WixShellExec"
+        Impersonate="yes" />  
+
+  </Product>
+</Wix>

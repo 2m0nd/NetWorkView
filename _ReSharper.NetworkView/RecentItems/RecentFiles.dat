@@ -2,8 +2,19 @@
   <RecentFiles>
     <File id="23FD5387-A80F-47F1-80B1-5720C442EF73/f:NetworkAdapter.cs" caret="267" fromTop="0" />
     <File id="23FD5387-A80F-47F1-80B1-5720C442EF73/f:NetworkMonitor.cs" caret="0" fromTop="0" />
-    <File id="B315F05A-43AA-4F7B-B571-4A5AA48E14A6/f:AutoRunHelper.cs" caret="0" fromTop="0" />
-    <File id="B315F05A-43AA-4F7B-B571-4A5AA48E14A6/f:ConfigHelper.cs" caret="0" fromTop="0" />
+    <File id="B315F05A-43AA-4F7B-B571-4A5AA48E14A6/f:ConfigHelper.cs" caret="2176" fromTop="25" />
+    <File id="B315F05A-43AA-4F7B-B571-4A5AA48E14A6/f:WindowAbout.xaml.cs" caret="0" fromTop="0" />
+    <File id="B315F05A-43AA-4F7B-B571-4A5AA48E14A6/f:NetworkViewControl.xaml.cs" caret="1994" fromTop="5" />
+    <File id="B315F05A-43AA-4F7B-B571-4A5AA48E14A6/f:NetworkViewWindow.xaml" caret="0" fromTop="0" />
+    <File id="B315F05A-43AA-4F7B-B571-4A5AA48E14A6/f:AutoRunHelper.cs" caret="330" fromTop="17" />
+    <File id="B315F05A-43AA-4F7B-B571-4A5AA48E14A6/f:App.config" caret="588" fromTop="14" />
+    <File id="A2F543A6-53CF-48A5-A4F1-1D7B5282A43F/f:Product.wxs" caret="1351" fromTop="23" />
+    <File id="B315F05A-43AA-4F7B-B571-4A5AA48E14A6/d:Properties/f:app.manifest" caret="2898" fromTop="18" />
   </RecentFiles>
-  <RecentEdits />
+  <RecentEdits>
+    <File id="B315F05A-43AA-4F7B-B571-4A5AA48E14A6/f:NetworkViewControl.xaml.cs" caret="2560" fromTop="30" />
+    <File id="B315F05A-43AA-4F7B-B571-4A5AA48E14A6/f:App.config" caret="588" fromTop="14" />
+    <File id="A2F543A6-53CF-48A5-A4F1-1D7B5282A43F/f:Product.wxs" caret="2752" fromTop="23" />
+    <File id="B315F05A-43AA-4F7B-B571-4A5AA48E14A6/d:Properties/f:app.manifest" caret="2898" fromTop="18" />
+  </RecentEdits>
 </RecentFiles>

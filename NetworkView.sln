@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetworkView", "NetworkView\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetworkMonitor", "StatNetworkClassLibrary\NetworkMonitor.csproj", "{23FD5387-A80F-47F1-80B1-5720C442EF73}"
 EndProject
+Project("{930C7802-8A8C-48F9-8165-68863BCCD9DD}") = "SetupNetworkView", "SetupNetworkView\SetupNetworkView.wixproj", "{A2F543A6-53CF-48A5-A4F1-1D7B5282A43F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		CD_ROM|Any CPU = CD_ROM|Any CPU
@@ -74,6 +76,31 @@ Global
 		{23FD5387-A80F-47F1-80B1-5720C442EF73}.SingleImage|Mixed Platforms.ActiveCfg = Debug|Any CPU
 		{23FD5387-A80F-47F1-80B1-5720C442EF73}.SingleImage|Mixed Platforms.Build.0 = Debug|Any CPU
 		{23FD5387-A80F-47F1-80B1-5720C442EF73}.SingleImage|x86.ActiveCfg = Debug|Any CPU
+		{A2F543A6-53CF-48A5-A4F1-1D7B5282A43F}.CD_ROM|Any CPU.ActiveCfg = Release|x86
+		{A2F543A6-53CF-48A5-A4F1-1D7B5282A43F}.CD_ROM|Mixed Platforms.ActiveCfg = Release|x86
+		{A2F543A6-53CF-48A5-A4F1-1D7B5282A43F}.CD_ROM|Mixed Platforms.Build.0 = Release|x86
+		{A2F543A6-53CF-48A5-A4F1-1D7B5282A43F}.CD_ROM|x86.ActiveCfg = Release|x86
+		{A2F543A6-53CF-48A5-A4F1-1D7B5282A43F}.CD_ROM|x86.Build.0 = Release|x86
+		{A2F543A6-53CF-48A5-A4F1-1D7B5282A43F}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{A2F543A6-53CF-48A5-A4F1-1D7B5282A43F}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{A2F543A6-53CF-48A5-A4F1-1D7B5282A43F}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{A2F543A6-53CF-48A5-A4F1-1D7B5282A43F}.Debug|x86.ActiveCfg = Debug|x86
+		{A2F543A6-53CF-48A5-A4F1-1D7B5282A43F}.Debug|x86.Build.0 = Debug|x86
+		{A2F543A6-53CF-48A5-A4F1-1D7B5282A43F}.DVD-5|Any CPU.ActiveCfg = Debug|x86
+		{A2F543A6-53CF-48A5-A4F1-1D7B5282A43F}.DVD-5|Mixed Platforms.ActiveCfg = Debug|x86
+		{A2F543A6-53CF-48A5-A4F1-1D7B5282A43F}.DVD-5|Mixed Platforms.Build.0 = Debug|x86
+		{A2F543A6-53CF-48A5-A4F1-1D7B5282A43F}.DVD-5|x86.ActiveCfg = Debug|x86
+		{A2F543A6-53CF-48A5-A4F1-1D7B5282A43F}.DVD-5|x86.Build.0 = Debug|x86
+		{A2F543A6-53CF-48A5-A4F1-1D7B5282A43F}.Release|Any CPU.ActiveCfg = Release|x86
+		{A2F543A6-53CF-48A5-A4F1-1D7B5282A43F}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{A2F543A6-53CF-48A5-A4F1-1D7B5282A43F}.Release|Mixed Platforms.Build.0 = Release|x86
+		{A2F543A6-53CF-48A5-A4F1-1D7B5282A43F}.Release|x86.ActiveCfg = Release|x86
+		{A2F543A6-53CF-48A5-A4F1-1D7B5282A43F}.Release|x86.Build.0 = Release|x86
+		{A2F543A6-53CF-48A5-A4F1-1D7B5282A43F}.SingleImage|Any CPU.ActiveCfg = Release|x86
+		{A2F543A6-53CF-48A5-A4F1-1D7B5282A43F}.SingleImage|Mixed Platforms.ActiveCfg = Release|x86
+		{A2F543A6-53CF-48A5-A4F1-1D7B5282A43F}.SingleImage|Mixed Platforms.Build.0 = Release|x86
+		{A2F543A6-53CF-48A5-A4F1-1D7B5282A43F}.SingleImage|x86.ActiveCfg = Release|x86
+		{A2F543A6-53CF-48A5-A4F1-1D7B5282A43F}.SingleImage|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
