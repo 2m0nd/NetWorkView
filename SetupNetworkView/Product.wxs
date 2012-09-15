@@ -10,23 +10,34 @@
 
 
   <Product Id="$(var.ProductCode)" Name="$(var.ProductName)" Language="1049" Version="$(var.ProductVersion)" Manufacturer="$(var.Manufacturer)" UpgradeCode="$(var.UpgradeCode)">
-    <Package InstallerVersion="200" Compressed="yes" />
+    <Package InstallerVersion="200" Compressed="yes"  />
 
     <Media Id="1" Cabinet="media1.cab" EmbedCab="yes" />
 
     <Directory Id="TARGETDIR" Name="SourceDir">
-      <Directory Id="LocalPrograms">
+      <Directory Id="LocalAppDataFolder">
         <Directory Id="INSTALLLOCATION" Name="$(var.ProductName)">
           <Component Id="ProductComponent" Guid="111556a2-e066-4393-af5c-9c9210187e12">
             <File Id='exe' DiskId='1' Source='$(var.PathBin)NetworkView.exe'/>
             <File Id='cfg' DiskId='1' Source='$(var.PathBin)NetworkView.exe.config'/>
             <File Id='statdll' DiskId='1' Source='$(var.PathBin)StatNetworkClassLibrary.dll'/>
             <!--<File Id='manifest' DiskId='1' Source='$(var.PathBin)NetworkView.exe.manifest'/>-->
-            <Shortcut Id="NetWorkViewLocal"
+            <Shortcut Id="NETWORKLINKLOCAL"
                       Name="NetWorkView"
                       Description="NetWorkView"
                       Target="[INSTALLLOCATION]NetworkView.exe"
                       WorkingDirectory="INSTALLLOCATION"/>
+            <RegistryValue Root="HKCU" Key="Software\Microsoft\$(var.ProductName)" Name="installed" Type="integer" Value="1" KeyPath="yes"/>
+            <RemoveFolder Id="INSTALLLOCATION" On="uninstall"/>
+          </Component>
+          <Component Id="NetWorkViewAutostart" Guid="78697884-5763-456A-9D3F-7A2FEEDC08E5">
+            <RegistryValue Action="write" 
+                           Root="HKCU"
+                           Id="NetWorkViewAutostart.rst"
+                           Key="Software\Microsoft\Windows\CurrentVersion\Run"
+                           Name="NetworkViewRun"
+                           Value="[INSTALLLOCATION]NetworkView.exe"
+                           Type="string"/>
           </Component>
         </Directory>
       </Directory>
@@ -64,30 +75,28 @@
       <ComponentRef Id="ProductComponent" />
       <ComponentRef Id="Link"/>
       <ComponentRef Id="LinkDesktop"/>
+      <ComponentRef Id="NetWorkViewAutostart"/>
     </Feature>
 
 
 
-    <Property Id="LocalPrograms">C:\Users\2m0nd\AppData\Local\</Property>
     <Property Id="WIXUI_INSTALLDIR" Value="INSTALLLOCATION" ></Property>
     <UI>
       <UIRef Id="WixUI_InstallDir" />
       <!-- skip licence dialog -->
       <Publish Dialog="WelcomeDlg" Control="Next" Event="NewDialog" Value="InstallDirDlg" Order="2">1</Publish>
       <Publish Dialog="InstallDirDlg" Control="Back" Event="NewDialog" Value="WelcomeDlg" Order="2">1</Publish>
-      <Publish Dialog="ExitDialog"
-    Control="Finish"
-    Event="DoAction"
-    Value="LaunchApplication">WIXUI_EXITDIALOGOPTIONALCHECKBOX = 1 and NOT Installed</Publish>
+      <Publish Dialog="ExitDialog" Control="Finish" Event="DoAction" Value="LaunchApplication">WIXUI_EXITDIALOGOPTIONALCHECKBOX = 1 and NOT Installed</Publish>
     </UI>
     <Property Id="WIXUI_EXITDIALOGOPTIONALCHECKBOX">1</Property>
-    <Property Id="WIXUI_EXITDIALOGOPTIONALCHECKBOXTEXT" Value="Launch My Application Name" />
+    <Property Id="WIXUI_EXITDIALOGOPTIONALCHECKBOXTEXT" Value="Запустить Dimond Net Work View" />
     <!-- Step 3: Include the custom action -->
+    
     <Property Id="WixShellExecTarget" Value="[INSTALLLOCATION]NetworkView.exe" />
     <CustomAction Id="LaunchApplication"
         BinaryKey="WixCA"
         DllEntry="WixShellExec"
-        Impersonate="yes" />  
+        Impersonate="yes" />
 
   </Product>
 </Wix>

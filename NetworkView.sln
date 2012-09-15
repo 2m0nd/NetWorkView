@@ -6,6 +6,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetworkMonitor", "StatNetworkClassLibrary\NetworkMonitor.csproj", "{23FD5387-A80F-47F1-80B1-5720C442EF73}"
 EndProject
 Project("{930C7802-8A8C-48F9-8165-68863BCCD9DD}") = "SetupNetworkView", "SetupNetworkView\SetupNetworkView.wixproj", "{A2F543A6-53CF-48A5-A4F1-1D7B5282A43F}"
+	ProjectSection(ProjectDependencies) = postProject
+		{B315F05A-43AA-4F7B-B571-4A5AA48E14A6} = {B315F05A-43AA-4F7B-B571-4A5AA48E14A6}
+		{23FD5387-A80F-47F1-80B1-5720C442EF73} = {23FD5387-A80F-47F1-80B1-5720C442EF73}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
